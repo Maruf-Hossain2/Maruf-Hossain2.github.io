@@ -94,7 +94,7 @@ footer {
     bottom: 110%; /* Place above the card */
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 255, 255, 0.8);
+    background: rgba(0, 255, 255, 0.9); /* More opaque background */
     color: #000;
     padding: 1rem; /* Increased padding for larger appearance */
     border-radius: 10px; /* Rounded corners */
@@ -102,7 +102,7 @@ footer {
     opacity: 0;
     transition: opacity 0.2s; /* Faster appearance */
     pointer-events: none;
-    width: 240px; /* Increased width for the tooltip */
+    width: 260px; /* Increased width for the tooltip */
     font-size: 18px; /* Font size for tooltip */
     text-align: center; /* Centered text */
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Neon effect */
