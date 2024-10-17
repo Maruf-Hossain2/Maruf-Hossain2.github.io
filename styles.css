@@ -3,22 +3,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: black; /* Set background color to black */
     color: #ffffff;
-}
-
-#background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1; /* Keep it behind other elements */
+    overflow: hidden; /* Prevent scrollbars from appearing */
 }
 
 header {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     text-align: center;
     padding: 2rem 0;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
@@ -30,8 +20,8 @@ h1, h2, h3 {
 
 section {
     padding: 2rem;
-    position: relative; /* Ensure sections are positioned correctly */
-    z-index: 1; /* Bring sections above the background */
+    position: relative;
+    z-index: 1; /* Bring content in front of background */
 }
 
 .about-section {
@@ -64,7 +54,7 @@ section {
 }
 
 footer {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
@@ -106,15 +96,15 @@ footer {
     bottom: 110%; /* Place above the card */
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 255, 255, 0.8);
+    background: rgba(0, 255, 255, 0.9);
     color: #000;
-    padding: 1rem; /* Increased padding for a larger tooltip */
-    border-radius: 10px; /* Rounded corners */
+    padding: 0.75rem;
+    border-radius: 5px;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.1s; /* Faster transition */
+    transition: opacity 0.2s;
     pointer-events: none;
-    font-size: 1.2rem; /* Increased font size */
+    z-index: 2; /* Ensure tooltip is above other content */
 }
 
 .skill-card:hover::after {
@@ -141,4 +131,23 @@ h2 {
 
 .resume-link:hover {
     background: rgba(0, 255, 255, 1);
+}
+
+/* Background and Effects */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 0;
+}
+
+.grid {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0.5) 5px);
+    z-index: 0; /* Behind other content */
 }
