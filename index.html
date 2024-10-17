@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="floating-background"></div>
     <header>
         <h1>Maruf Hossain</h1>
         <p>Welcome to my portfolio website</p>
@@ -54,7 +53,7 @@
                 <h3>Python</h3>
             </div>
         </div>
-    </section>
+    </section> 
 
     <section id="hobbies">
         <h2>Hobbies</h2>
@@ -85,29 +84,6 @@
         </p>
     </footer>
 
-    <script>
-        const profileContainer = document.querySelector('.profile-container');
-
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const maxScroll = 300; // Adjust this value to control how quickly it fades
-            const opacity = 1 - Math.min(scrollY / maxScroll, 1); // Calculate opacity based on scroll
-            profileContainer.style.opacity = opacity;
-        });
-
-        // Avoid cursor effect for floating elements
-        const floatingBackground = document.querySelector('.floating-background');
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-
-            const particles = document.querySelectorAll('.particle');
-            particles.forEach((particle) => {
-                const randomX = Math.random() * 100 - 50;
-                const randomY = Math.random() * 100 - 50;
-                particle.style.transform = `translate(${randomX}px, ${randomY}px)`;
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
