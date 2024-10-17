@@ -3,15 +3,15 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-    color: #ffffff;
+    background-color: #0d0d0d; /* Dark background for contrast */
 }
 
 header {
-    background: rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 2rem 0;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    padding: 1.5rem 0;
+    position: relative;
 }
 
 h1, h2, h3 {
@@ -19,47 +19,44 @@ h1, h2, h3 {
 }
 
 section {
-    padding: 2rem;
+    padding: 1.5rem;
+    color: #ffffff; /* White text for better readability */
 }
 
-.about-section {
+.about-content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 2rem;
+    align-items: center;
 }
 
-.about-text {
-    flex: 1;
-    margin-right: 1rem;
+.profile-photo img {
+    width: 150px; /* Adjust the size of your profile photo */
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Neon effect */
+    transition: transform 0.3s;
 }
 
-.profile-container {
-    position: relative;
-    width: 200px; /* Adjust the size as needed */
-    transition: opacity 0.5s ease-in-out;
-}
-
-.profile-photo {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* Rounded corners for a modern look */
-    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
+.profile-photo img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .project {
     margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Light border for projects */
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 footer {
-    background: rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    color: white;
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
 }
 
 #skills {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #1a1a1a;
     padding: 2rem;
     text-align: center;
 }
@@ -83,11 +80,6 @@ footer {
     overflow: hidden;
 }
 
-.skill-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 40px rgba(0, 255, 255, 0.5);
-}
-
 .skill-title {
     font-size: 24px; /* Increased font size for titles */
     color: #00ffff; /* Neon color */
@@ -100,42 +92,28 @@ footer {
     bottom: 110%; /* Place above the card */
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 255, 255, 0.8); /* Slightly transparent neon */
+    background: rgba(0, 255, 255, 0.9); /* Slightly more transparent neon */
     color: #000;
-    padding: 0.5rem 1rem; /* Adjusted padding */
-    border-radius: 5px;
+    padding: 0.75rem 1rem; /* Increased padding for a bigger appearance */
+    border-radius: 10px; /* Rounded corners */
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.1s; /* Instant appearance */
     pointer-events: none;
-    width: 200px; /* Adjusted width for the tooltip */
-    font-size: 14px; /* Font size for tooltip */
+    width: 220px; /* Increased width for the tooltip */
+    font-size: 16px; /* Font size for tooltip */
     text-align: center; /* Centered text */
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Neon effect */
+    border: 2px solid rgba(0, 255, 255, 1); /* Neon border */
 }
 
 .skill-card:hover::after {
     opacity: 1; /* Fully visible on hover */
 }
 
-h2 {
-    margin-bottom: 1.5rem;
-}
-
-#hobbies, #certifications, #awards, #resume {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    text-align: center;
-}
-
-.resume-link {
-    background: rgba(0, 255, 255, 0.8);
-    color: #000;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.resume-link:hover {
-    background: rgba(0, 255, 255, 1);
+#hobbies, #certifications, #awards, #resume, #social-media {
+    background-color: #1a1a1a; /* Dark background for other sections */
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
 }

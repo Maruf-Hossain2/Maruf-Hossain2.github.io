@@ -12,13 +12,15 @@
         <p>Welcome to my portfolio website</p>
     </header>
 
-    <section id="about" class="about-section">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>A short description about who you are, your background, and what you do.</p>
-        </div>
-        <div class="profile-container">
-            <img src="your-photo.jpg" alt="Maruf Hossain" class="profile-photo">
+    <section id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>A short description about who you are, your background, and what you do.</p>
+            </div>
+            <div class="profile-photo">
+                <img src="your-photo.jpg" alt="Maruf Hossain"> <!-- Update this with your photo path -->
+            </div>
         </div>
     </section>
 
@@ -53,11 +55,11 @@
                 <h3 class="skill-title">Python</h3>
             </div>
         </div>
-    </section> 
+    </section>  
 
     <section id="hobbies">
         <h2>Hobbies</h2>
-        <p>List your hobbies and interests here.</p>
+        <p>List your hobbies here.</p>
     </section>
 
     <section id="certifications">
@@ -72,27 +74,19 @@
 
     <section id="resume">
         <h2>Downloadable Resume</h2>
-        <a href="your-resume.pdf" class="resume-link" download>Download my Resume</a>
+        <a href="your-resume.pdf" target="_blank">Download my Resume</a> <!-- Update with your resume link -->
+    </section>
+
+    <section id="social-media">
+        <h2>Connect with Me</h2>
+        <p>
+            <a href="https://github.com/your-github" target="_blank">GitHub</a> |
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+        </p>
     </section>
 
     <footer>
         <p>Contact: your-email@example.com</p>
-        <p>Follow me on:
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>,
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>,
-            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-        </p>
     </footer>
-
-    <script>
-        const profileContainer = document.querySelector('.profile-container');
-
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const maxScroll = 300; // Adjust this value to control how quickly it fades
-            const opacity = 1 - Math.min(scrollY / maxScroll, 1); // Calculate opacity based on scroll
-            profileContainer.style.opacity = opacity;
-        });
-    </script>
 </body>
 </html>
