@@ -1,45 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Maruf Hossain</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <header>
         <h1>Maruf Hossain</h1>
-        <p>Welcome to my futuristic portfolio</p>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <p>Welcome to my portfolio website</p>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>A short description about who you are, your background, and what you do.</p>
-    </section>
-
-    <section id="profile">
-        <h2>My Profile Picture</h2>
+    <section id="about" class="about-section">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>A short description about who you are, your background, and what you do.</p>
+        </div>
         <div class="profile-container">
             <img src="your-photo.jpg" alt="Maruf Hossain" class="profile-photo">
-            <div class="profile-overlay">
-                <h3>Hello, I'm Maruf!</h3>
-                <p>A brief description about yourself.</p>
-            </div>
         </div>
-    </section>    
+    </section>
 
     <section id="projects">
         <h2>Projects</h2>
@@ -51,55 +32,72 @@
             <h3>Project 2</h3>
             <p>Brief description of your second project and a link to view it.</p>
         </div>
-        <a class="btn" href="#">View More Projects</a>
     </section>
 
     <section id="skills">
         <h2>My Skills</h2>
         <div class="skills-container">
-            <div class="skill-card" data-tooltip="Proficient in structuring web pages using HTML5.">HTML</div>
-            <div class="skill-card" data-tooltip="Experienced in styling and layout with CSS3.">CSS</div>
-            <div class="skill-card" data-tooltip="Skilled in adding interactivity with JavaScript and ES6.">JavaScript</div>
-            <div class="skill-card" data-tooltip="Knowledgeable in building dynamic user interfaces with React.">React</div>
-            <div class="skill-card" data-tooltip="Proficient in scripting and automation with Python.">Python</div>
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Proficient in structuring web pages using HTML5.</p>
+            </div>
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Experienced in styling and layout with CSS3.</p>
+            </div>
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Skilled in adding interactivity with JavaScript and ES6.</p>
+            </div>
+            <div class="skill-card">
+                <h3>React</h3>
+                <p>Knowledgeable in building dynamic user interfaces with React.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Proficient in scripting and automation with Python.</p>
+            </div>
         </div>
-    </section>
+    </section> 
 
     <section id="hobbies">
         <h2>Hobbies</h2>
-        <p>A list of your hobbies and interests.</p>
+        <p>List your hobbies and interests here.</p>
     </section>
 
     <section id="certifications">
         <h2>Certifications</h2>
-        <ul>
-            <li>Certification 1</li>
-            <li>Certification 2</li>
-        </ul>
+        <p>List your certifications here.</p>
     </section>
 
     <section id="awards">
         <h2>Awards</h2>
-        <ul>
-            <li>Award 1</li>
-            <li>Award 2</li>
-        </ul>
+        <p>List your awards here.</p>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        <div class="social-media">
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Twitter</a>
-        </div>
-        <a class="btn" href="your-resume.pdf" download>Download Resume</a>
+    <section id="resume">
+        <h2>Downloadable Resume</h2>
+        <a href="your-resume.pdf" download>Download my Resume</a>
     </section>
 
     <footer>
-        <p>&copy; 2024 Maruf Hossain. All rights reserved.</p>
+        <p>Contact: your-email@example.com</p>
+        <p>Follow me on:
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>,
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>,
+            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+        </p>
     </footer>
-</body>
 
+    <script>
+        const profileContainer = document.querySelector('.profile-container');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const maxScroll = 300; // Adjust this value to control how quickly it fades
+            const opacity = 1 - Math.min(scrollY / maxScroll, 1); // Calculate opacity based on scroll
+            profileContainer.style.opacity = opacity;
+        });
+    </script>
+</body>
 </html>
