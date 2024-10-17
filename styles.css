@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #ffffff;
+    background: black; /* Dark background */
     overflow: hidden; /* Prevent scrollbars from appearing */
 }
 
@@ -133,37 +134,37 @@ h2 {
     background: rgba(0, 255, 255, 1);
 }
 
-/* Background and Effects */
-.background {
+/* Futuristic Grid Lines */
+.grid {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
-    z-index: 0;
+    background: transparent;
+    z-index: 0; /* Behind other content */
+    pointer-events: none; /* Allow interaction with underlying elements */
 }
 
-.grid {
-    position: fixed;
+.grid::before, .grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0.5) 5px);
-    z-index: 0; /* Behind other content */
+    background: rgba(0, 255, 255, 0.1);
+    background-image: linear-gradient(45deg, transparent 24%, rgba(0, 255, 255, 0.5) 25%, rgba(0, 255, 255, 0.5) 26%, transparent 27%, transparent);
+    background-size: 50px 50px; /* Grid size */
+    animation: glow 1.5s infinite alternate; /* Animation for glowing effect */
 }
 
-/* Geometric Shapes */
-.shape {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.5);
-    animation: move 5s infinite alternate;
-    border-radius: 10px;
+@keyframes glow {
+    0% {
+        opacity: 0.1;
+    }
+     100% {
+        opacity: 0.5;
+    }
 }
 
-@keyframes move {
-    0% { transform: translate(0, 0); }
-    50% { transform: translate(100px, 50px); }
-    100% { transform: translate(-50px, 100px); }
-}
