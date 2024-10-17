@@ -100,10 +100,10 @@ footer {
     border-radius: 10px; /* Rounded corners */
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0s; /* Faster appearance */
+    transition: opacity 0.2s; /* Faster appearance */
     pointer-events: none;
-    width: 500px; /* Increased width for the tooltip */
-    font-size: 30px; /* Font size for tooltip */
+    width: 260px; /* Increased width for the tooltip */
+    font-size: 18px; /* Font size for tooltip */
     text-align: center; /* Centered text */
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Neon effect */
     border: 2px solid rgba(0, 255, 255, 1); /* Neon border */
