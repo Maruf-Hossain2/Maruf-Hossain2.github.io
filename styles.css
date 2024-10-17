@@ -8,13 +8,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 header {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     position: relative;
 }
 
@@ -37,14 +38,53 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Change color on hover */
 }
 
 h1, h2, h3 {
     margin: 0;
 }
 
+.wave {
+    position: relative;
+    height: 100px;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+.wave::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 100%;
+    background: #333;
+    border-radius: 45%;
+    transform: translateX(-50%);
+    animation: wave 5s infinite linear;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(20px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
 section {
     padding: 2rem;
+    position: relative;
+    z-index: 1; /* Ensure sections appear above the wave */
 }
 
 .profile-pic {
@@ -65,6 +105,7 @@ section {
     border-radius: 8px;
     padding: 1rem;
     transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; /* Ensure the shadow appears correctly */
 }
 
 .project:hover {
