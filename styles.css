@@ -96,16 +96,20 @@ footer {
     transform: translateX(-50%);
     background: rgba(0, 255, 255, 0.8);
     color: #000;
-    padding: 0.5rem;
+    padding: 1rem; /* Increased padding for larger tooltip */
     border-radius: 5px;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.1s; /* Instant appearance */
     pointer-events: none;
+    width: 200px; /* Width of the tooltip */
+    font-size: 14px; /* Increased font size */
+    text-align: center; /* Centered text */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Neon effect */
 }
 
 .skill-card:hover::after {
-    opacity: 1;
+    opacity: 1; /* Fully visible on hover */
 }
 
 h2 {
