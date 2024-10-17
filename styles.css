@@ -1,17 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #181818;
+    background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
     color: #f4f4f4;
 }
 
 header {
-    background-color: #282c34;
-    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    color: #61dafb;
     text-align: center;
     padding: 2rem 0;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 header nav ul {
@@ -28,11 +43,12 @@ header nav ul li a {
     color: #61dafb;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 header nav ul li a:hover {
     color: #21a1f1;
+    transform: scale(1.1);
 }
 
 section {
@@ -40,6 +56,11 @@ section {
     margin: 2rem 0;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    transition: background 0.3s;
+}
+
+section:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 h2 {
@@ -53,16 +74,17 @@ h2 {
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: #61dafb;
+    background: linear-gradient(45deg, #61dafb, #21a1f1);
     color: #fff;
     border: none;
     border-radius: 4px;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .btn:hover {
-    background: #21a1f1;
+    background: linear-gradient(45deg, #21a1f1, #61dafb);
+    transform: scale(1.1);
 }
 
 .skills-container {
@@ -73,7 +95,7 @@ h2 {
 }
 
 .skill-card {
-    background-color: #333;
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     padding: 1rem;
     width: 120px;
@@ -97,7 +119,7 @@ ul {
 }
 
 footer {
-    background-color: #282c34;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
     padding: 1rem 0;
