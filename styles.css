@@ -100,7 +100,7 @@ footer {
     border-radius: 10px; /* Rounded corners */
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.1s; /* Instant appearance */
+    transition: opacity 0.2s; /* Faster appearance */
     pointer-events: none;
     width: 240px; /* Increased width for the tooltip */
     font-size: 18px; /* Font size for tooltip */
