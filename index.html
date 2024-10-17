@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="background"></div> <!-- Added for the interactive background -->
+    
     <header>
         <h1>Maruf Hossain</h1>
         <p>Welcome to my portfolio website</p>
@@ -93,6 +95,70 @@
             const opacity = 1 - Math.min(scrollY / maxScroll, 1); // Calculate opacity based on scroll
             profileContainer.style.opacity = opacity;
         });
+
+        // Particle effect
+        const background = document.getElementById('background');
+
+        const particles = [];
+        const colors = ['#00ffcc', '#00ffff', '#ff00ff', '#ffcc00', '#ffffff'];
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = (Math.random() - 0.5) * 2;
+                this.speedY = (Math.random() - 0.5) * 2;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.size > 0.2) this.size -= 0.1; // Particle fading
+            }
+
+            draw(context) {
+                context.fillStyle = this.color;
+                context.beginPath();
+                context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                context.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle(Math.random() * window.innerWidth, Math.random() * window.innerHeight));
+            }
+        }
+
+        function animate() {
+            const canvas = document.createElement('canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            background.appendChild(canvas);
+            const context = canvas.getContext('2d');
+
+            function draw() {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach((particle, index) => {
+                    particle.update();
+                    particle.draw(context);
+                    if (particle.size <= 0.2) {
+                        particles.splice(index, 1);
+                        particles.push(new Particle(Math.random() * window.innerWidth, Math.random() * window.innerHeight));
+                    }
+                });
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        window.onload = () => {
+            init();
+            animate();
+        };
     </script>
 </body>
 </html>
