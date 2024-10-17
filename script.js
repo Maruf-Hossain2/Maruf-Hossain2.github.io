@@ -1,5 +1,5 @@
 // Particle effect
-const numParticles = 100; // Number of particles
+const numParticles = 10000; // Number of particles
 const particles = [];
 const particleSpeed = 0.5; // Speed of particle movement
 const avoidDistance = 50; // Distance to avoid cursor
