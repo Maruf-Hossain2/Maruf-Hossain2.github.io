@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     color: #ffffff;
-    overflow: hidden; /* Prevent scrolling */
 }
 
 #background {
@@ -30,6 +29,8 @@ h1, h2, h3 {
 
 section {
     padding: 2rem;
+    position: relative; /* Ensure sections are positioned correctly */
+    z-index: 1; /* Bring sections above the background */
 }
 
 .about-section {
