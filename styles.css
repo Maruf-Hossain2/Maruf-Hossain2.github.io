@@ -5,7 +5,8 @@ body {
     padding: 0;
     background: black;
     color: #ffffff;
-    overflow: hidden; /* Prevent scrollbars */
+    overflow: auto; /* Allow scrolling */
+    position: relative; /* Allow absolute positioning of particles */
 }
 
 header {

@@ -24,18 +24,29 @@ document.addEventListener('mousemove', (e) => {
         const distance = Math.sqrt(dx * dx + dy * dy);
         const moveAway = Math.max(0, (50 - distance) / 50); // Move away effect
         const angle = Math.atan2(dy, dx);
-        const moveX = Math.cos(angle) * moveAway * 5; // Move particles
-        const moveY = Math.sin(angle) * moveAway * 5;
-
-        particle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        particle.style.transform = `translate(${Math.cos(angle) * moveAway * 10}px, ${Math.sin(angle) * moveAway * 10}px)`;
     });
 });
 
 // Move particles randomly
 function animateParticles() {
     particles.forEach(particle => {
-        particle.style.left = `${parseFloat(particle.style.left) + (Math.random() - 0.5)}px`;
-        particle.style.top = `${parseFloat(particle.style.top) + (Math.random() - 0.5)}px`;
+        const randomX = Math.random() * 2 - 1; // Random x direction
+        const randomY = Math.random() * 2 - 1; // Random y direction
+        particle.style.left = `${parseFloat(particle.style.left) + randomX}px`;
+        particle.style.top = `${parseFloat(particle.style.top) + randomY}px`;
+        
+        // Keep particles within the window
+        if (parseFloat(particle.style.left) < 0) {
+            particle.style.left = '0px';
+        } else if (parseFloat(particle.style.left) > window.innerWidth) {
+            particle.style.left = `${window.innerWidth}px`;
+        }
+        if (parseFloat(particle.style.top) < 0) {
+            particle.style.top = '0px';
+        } else if (parseFloat(particle.style.top) > window.innerHeight) {
+            particle.style.top = `${window.innerHeight}px`;
+        }
     });
     requestAnimationFrame(animateParticles);
 }
