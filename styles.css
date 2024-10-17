@@ -5,8 +5,8 @@ body {
     padding: 0;
     background: black;
     color: #ffffff;
-    overflow: auto; /* Allow scrolling */
-    position: relative; /* Allow absolute positioning of particles */
+    overflow: auto;
+    position: relative; /* To allow absolute positioning of particles */
 }
 
 header {
@@ -133,10 +133,24 @@ h2 {
     background: rgba(0, 255, 255, 1);
 }
 
-/* Particle effect */
+/* Particle effect - Lightning sparks */
 .particle {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
     opacity: 0.8;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(0, 255, 255, 0.7); /* Glow effect */
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 255, 255, 0) 80%); /* Lightning glow */
+    animation: flicker 1.5s infinite; /* Flicker animation for spark effect */
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2); /* Increase size temporarily to give a flickering effect */
+    }
 }

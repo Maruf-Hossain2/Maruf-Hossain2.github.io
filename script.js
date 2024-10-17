@@ -1,8 +1,8 @@
 // Particle effect
-const numParticles = 500; // Number of particles
+const numParticles = 100; // Number of particles
 const particles = [];
-const particleSpeed = 0.5; // Speed of particle movement
-const avoidDistance = 50; // Distance to avoid cursor
+const particleSpeed = 1.5; // Speed of particle movement
+const avoidDistance = 70; // Distance to avoid cursor
 
 // Create particles
 for (let i = 0; i < numParticles; i++) {
@@ -10,7 +10,6 @@ for (let i = 0; i < numParticles; i++) {
     particle.classList.add('particle');
     particle.style.width = `${Math.random() * 10 + 5}px`; // Random size
     particle.style.height = particle.style.width; // Keep it circular
-    particle.style.backgroundColor = `rgba(0, 255, 255, ${Math.random()})`; // Random color
     particle.style.position = 'absolute';
     particle.style.left = `${Math.random() * window.innerWidth}px`;
     particle.style.top = `${Math.random() * window.innerHeight}px`;
@@ -54,6 +53,7 @@ function animateParticles() {
             particle.style.top = `${parseFloat(particle.style.top) + Math.sin(angle) * (avoidDistance - distance)}px`;
         }
     });
+
     requestAnimationFrame(animateParticles);
 }
 
