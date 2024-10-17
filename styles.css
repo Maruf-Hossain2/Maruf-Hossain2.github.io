@@ -88,22 +88,28 @@ footer {
     box-shadow: 0 8px 40px rgba(0, 255, 255, 0.5);
 }
 
+.skill-title {
+    font-size: 24px; /* Increased font size for titles */
+    color: #00ffff; /* Neon color */
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; /* Neon glow effect */
+}
+
 .skill-card::after {
     content: attr(title);
     position: absolute;
     bottom: 110%; /* Place above the card */
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 255, 255, 0.9); /* Slightly transparent neon */
+    background: rgba(0, 255, 255, 0.8); /* Slightly transparent neon */
     color: #000;
-    padding: 1rem; /* Increased padding for larger tooltip */
+    padding: 0.5rem 1rem; /* Adjusted padding */
     border-radius: 5px;
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.1s; /* Instant appearance */
     pointer-events: none;
-    width: 250px; /* Increased width for larger tooltip */
-    font-size: 16px; /* Increased font size for better visibility */
+    width: 200px; /* Adjusted width for the tooltip */
+    font-size: 14px; /* Font size for tooltip */
     text-align: center; /* Centered text */
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Neon effect */
 }
