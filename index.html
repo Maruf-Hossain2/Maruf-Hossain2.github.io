@@ -8,11 +8,23 @@
 </head>
 <body>
     <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
         <h1>Maruf Hossain</h1>
         <p>Welcome to my portfolio website</p>
         <button id="theme-toggle">Switch to Light Mode</button>
     </header>
-
+    
     <section id="about" class="about-section">
         <div class="about-text">
             <h2>About Me</h2>
@@ -22,7 +34,7 @@
             <img src="your-photo.jpg" alt="Maruf Hossain" class="profile-photo">
         </div>
     </section>
-
+    
     <section id="projects">
         <h2>Projects</h2>
         <div class="project">
@@ -34,70 +46,69 @@
             <p>Brief description of your second project and a link to view it.</p>
         </div>
     </section>
-
+    
     <section id="skills">
         <h2>My Skills</h2>
-    
         <div class="skills-container">
             <div class="skill-card">
-                <div class="skill-info">Proficient in structuring web pages using HTML5.</div>
-                <h3>HTML</h3>
+                <div class="card-front"><h3>HTML</h3></div>
+                <div class="card-back">Proficient in structuring web pages using HTML5.</div>
             </div>
             <div class="skill-card">
-                <div class="skill-info">Experienced in styling and layout with CSS3.</div>
-                <h3>CSS</h3>
+                <div class="card-front"><h3>CSS</h3></div>
+                <div class="card-back">Experienced in styling and layout with CSS3.</div>
             </div>
             <div class="skill-card">
-                <div class="skill-info">Skilled in adding interactivity with JavaScript and ES6.</div>
-                <h3>JavaScript</h3>
+                <div class="card-front"><h3>JavaScript</h3></div>
+                <div class="card-back">Skilled in adding interactivity with JavaScript and ES6.</div>
             </div>
             <div class="skill-card">
-                <div class="skill-info">Knowledgeable in building dynamic user interfaces with React.</div>
-                <h3>React</h3>
+                <div class="card-front"><h3>React</h3></div>
+                <div class="card-back">Knowledgeable in building dynamic user interfaces with React.</div>
             </div>
             <div class="skill-card">
-                <div class="skill-info">Proficient in scripting and automation with Python.</div>
-                <h3>Python</h3>
+                <div class="card-front"><h3>Python</h3></div>
+                <div class="card-back">Proficient in scripting and automation with Python.</div>
             </div>
         </div>
-    </section>    
-
+    </section>
+    
     <section id="hobbies">
         <h2>Hobbies</h2>
         <p>List your hobbies and interests here.</p>
     </section>
-
+    
     <section id="certifications">
         <h2>Certifications</h2>
         <p>List your certifications here.</p>
     </section>
-
+    
     <section id="awards">
         <h2>Awards</h2>
         <p>List your awards here.</p>
     </section>
-
+    
     <section id="resume">
         <h2>Downloadable Resume</h2>
         <a href="your-resume.pdf" class="resume-link" download>Download my Resume</a>
     </section>
-
+    
     <section id="contact">
         <h2>Contact Me</h2>
         <form id="contact-form">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
-
+            
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
-
+            
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
-
+            
             <button type="submit">Send Message</button>
         </form>
     </section>
-
+    
     <footer>
         <p>Contact: your-email@example.com</p>
         <p>Follow me on:
@@ -106,7 +117,7 @@
             <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
         </p>
     </footer>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
