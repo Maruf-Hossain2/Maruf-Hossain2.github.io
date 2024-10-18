@@ -7,6 +7,9 @@ body {
     background: black;
     color: #ffffff;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
 }
 
 header {
@@ -68,21 +71,30 @@ nav ul li a:hover {
     }
 }
 
-/* Flip card styles for skills */
+/* Layout adjustments for sections */
+section {
+    width: 100%;
+    max-width: 800px; /* Center the content */
+    padding: 20px;
+    text-align: center; /* Center the text */
+}
+
+/* Skills section styles */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Center the skill cards */
     gap: 2rem;
 }
 
 .skill-card {
     perspective: 1000px;
+    width: 200px; /* Set a fixed width */
 }
 
 .card-front, .card-back {
     position: absolute;
-    width: 200px;
+    width: 100%; /* Make it responsive */
     height: 150px;
     backface-visibility: hidden;
     border-radius: 10px;
