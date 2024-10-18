@@ -6,10 +6,8 @@ body {
     padding: 0;
     background: black;
     color: #ffffff;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    overflow: hidden; /* Prevents scrollbars from appearing due to particles */
+    position: relative; /* Required for absolute positioning of particles */
 }
 
 header {
@@ -58,7 +56,6 @@ nav ul li a:hover {
     background: rgba(0, 255, 255, 0.7);
     pointer-events: none;
     opacity: 0;
-    animation: fade-out 1.5s forwards;
 }
 
 @keyframes fade-out {

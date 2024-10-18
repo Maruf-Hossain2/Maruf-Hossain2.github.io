@@ -29,6 +29,17 @@ function createParticle(x, y) {
     particle.style.top = `${y}px`;
     document.body.appendChild(particle);
 
+    // Add animation to particles
+    particle.style.transition = 'transform 0.5s ease, opacity 1.5s ease';
+    particle.style.transform = `translate(-50%, -50%) scale(0.5)`;
+    particle.style.opacity = '1';
+
+    // Remove particle after animation
+    setTimeout(() => {
+        particle.style.transform = `translate(-50%, -50%) scale(0)`;
+        particle.style.opacity = '0';
+    }, 100);
+
     setTimeout(() => {
         particle.remove();
     }, 1500);
