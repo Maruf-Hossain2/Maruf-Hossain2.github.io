@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Maruf Hossain</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For Font Awesome Icons -->
+    <meta name="description" content="Portfolio of Maruf Hossain, showcasing web development projects, skills, and achievements.">
+    <meta property="og:title" content="Portfolio - Maruf Hossain">
+    <meta property="og:description" content="Web developer portfolio of Maruf Hossain.">
+    <meta property="og:image" content="your-image-url.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.ico"> <!-- Add your favicon here -->
 </head>
+
 <body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button id="theme-toggle">Toggle Light/Dark Mode</button></li>
+        </ul>
+    </nav>
+
     <header>
-        <nav class="navbar">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#awards">Awards</a>
-            <a href="#resume">Resume</a>
-        </nav>
         <h1>Maruf Hossain</h1>
         <p>Welcome to my portfolio website</p>
     </header>
@@ -27,7 +37,7 @@
             <p>A short description about who you are, your background, and what you do.</p>
         </div>
         <div class="profile-container">
-            <img src="your-photo.jpg" alt="Maruf Hossain" class="profile-photo">
+            <img src="your-photo.jpg" alt="Maruf Hossain" class="profile-photo" loading="lazy">
         </div>
     </section>
 
@@ -35,11 +45,11 @@
         <h2>Projects</h2>
         <div class="project">
             <h3>Project 1</h3>
-            <p>Brief description of your project and a <a href="#">link to view it</a>.</p>
+            <p>Brief description of your project and a <a href="project-link" target="_blank">Live Demo</a> | <a href="github-link" target="_blank">Source Code</a></p>
         </div>
         <div class="project">
             <h3>Project 2</h3>
-            <p>Brief description of your second project and a <a href="#">link to view it</a>.</p>
+            <p>Brief description of your second project and a <a href="project-link" target="_blank">Live Demo</a> | <a href="github-link" target="_blank">Source Code</a></p>
         </div>
     </section>
 
@@ -62,34 +72,24 @@
                 <h3>Python</h3>
             </div>
         </div>
-    </section> 
-
-    <section id="hobbies">
-        <h2>Hobbies</h2>
-        <p>List your hobbies and interests here.</p>
     </section>
 
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <p>List your certifications here.</p>
-    </section>
-
-    <section id="awards">
-        <h2>Awards</h2>
-        <p>List your awards here.</p>
-    </section>
-
-    <section id="resume">
-        <h2>Downloadable Resume</h2>
-        <a href="your-resume.pdf" class="resume-link" download>Download my Resume</a>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
     </section>
 
     <footer>
         <p>Contact: your-email@example.com</p>
         <p>Follow me on:
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>,
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>,
-            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+            <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
         </p>
     </footer>
 
