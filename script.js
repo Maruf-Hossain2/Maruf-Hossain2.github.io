@@ -23,7 +23,8 @@ document.addEventListener('mousemove', throttle((e) => {
 function createParticle(x, y) {
     const particle = document.createElement('div');
     particle.className = 'particle';
-    particle.style.width = `${Math.random() * 10 + 5}px`;
+    const size = Math.random() * 10 + 5; // Random size between 5 and 15
+    particle.style.width = `${size}px`;
     particle.style.height = particle.style.width;
     particle.style.left = `${x}px`;
     particle.style.top = `${y}px`;
@@ -31,7 +32,7 @@ function createParticle(x, y) {
 
     // Add animation to particles
     particle.style.transition = 'transform 0.5s ease, opacity 1.5s ease';
-    particle.style.transform = `translate(-50%, -50%) scale(0.5)`;
+    particle.style.transform = `translate(-50%, -50%) scale(1)`;
     particle.style.opacity = '1';
 
     // Remove particle after animation
@@ -44,6 +45,7 @@ function createParticle(x, y) {
         particle.remove();
     }, 1500);
 }
+
 
 // Throttle function to limit the rate of event execution
 function throttle(callback, limit) {

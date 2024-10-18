@@ -6,7 +6,7 @@ body {
     padding: 0;
     background: black;
     color: #ffffff;
-    overflow: hidden; /* Prevents scrollbars from appearing due to particles */
+    overflow: auto; /* Prevents scrollbars from appearing due to particles */
     position: relative; /* Required for absolute positioning of particles */
 }
 
