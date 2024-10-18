@@ -81,10 +81,11 @@ section {
 
 /* Skills section styles */
 .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the skill cards */
-    gap: 2rem;
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+    gap: 2rem; /* Space between cards */
+    margin: 0 auto; /* Center the grid */
+    padding: 20px; /* Additional padding */
 }
 
 .skill-card {
