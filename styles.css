@@ -6,7 +6,7 @@ body {
     padding: 0;
     background: black;
     color: #ffffff;
-    overflow: auto; /* Prevents scrollbars from appearing due to particles */
+    overflow: hidden; /* Prevents scrollbars from appearing due to particles */
     position: relative; /* Required for absolute positioning of particles */
 }
 
@@ -112,10 +112,11 @@ section {
 }
 
 .card-back {
-    background-color: rgba(0, 255, 255, 0.1);
+    background-color: rgba(0, 255, 255, 0.5);
     transform: rotateY(180deg);
 }
 
+/* On hover, show the back of the card */
 .skill-card:hover .card-front {
     transform: rotateY(180deg);
 }
@@ -124,52 +125,10 @@ section {
     transform: rotateY(0);
 }
 
-/* Contact form styles */
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-input, textarea {
-    padding: 10px;
-    border: 1px solid #00ffff;
-    border-radius: 5px;
-    transition: border 0.3s;
-}
-
-input:focus, textarea:focus {
-    border: 1px solid #ff7f50; /* Change the border color on focus */
-    outline: none; /* Remove default outline */
-}
-
-button {
-    background-color: #00ffff;
-    color: #000;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #ff7f50; /* Change button color on hover */
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack nav items on small screens */
-        gap: 1rem;
-    }
-
-    .skills-container {
-        grid-template-columns: 1fr; /* Single column on small screens */
-    }
+/* Footer styles */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
 }

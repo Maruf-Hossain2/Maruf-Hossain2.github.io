@@ -1,71 +1,58 @@
-// Theme toggle
-const themeToggle = document.getElementById('theme-toggle');
-let isLightMode = false;
-
-themeToggle.addEventListener('click', () => {
-    if (isLightMode) {
-        document.body.style.background = 'black';
-        document.body.style.color = '#ffffff';
-        themeToggle.innerText = 'Switch to Light Mode';
-    } else {
-        document.body.style.background = '#ffffff';
-        document.body.style.color = 'black';
-        themeToggle.innerText = 'Switch to Dark Mode';
-    }
-    isLightMode = !isLightMode;
-});
-
-// Particle effect on mouse movement
+// Script for mouse-following particles
 document.addEventListener('mousemove', (e) => {
-    const scrollY = window.scrollY; // Get the current vertical scroll position
-    createParticle(e.pageX, e.pageY + scrollY); // Adjust the Y position based on scroll
+    const particles = document.querySelectorAll('.particle');
+    particles.forEach((particle) => {
+        particle.style.left = `${e.clientX}px`;
+        particle.style.top = `${e.clientY}px`;
+    });
 });
 
-function createParticle(x, y) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    const size = Math.random() * 10 + 5; // Random size between 5 and 15
-    particle.style.width = `${size}px`;
-    particle.style.height = particle.style.width;
-    particle.style.left = `${x}px`;
-    particle.style.top = `${y}px`;
-    document.body.appendChild(particle);
+// Particle creation function
+function createParticles(num) {
+    const particlesContainer = document.body;
 
-    // Add animation to particles
-    particle.style.transition = 'transform 0.5s ease, opacity 1.5s ease';
-    particle.style.transform = `translate(-50%, -50%) scale(1)`;
-    particle.style.opacity = '1';
+    for (let i = 0; i < num; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        const size = Math.random() * 10 + 5; // Random size between 5 and 15px
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
 
-    // Remove particle after animation
-    setTimeout(() => {
-        particle.style.transform = `translate(-50%, -50%) scale(0)`;
-        particle.style.opacity = '0';
-    }, 100);
+        // Random color
+        const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        particle.style.backgroundColor = color;
 
-    setTimeout(() => {
-        particle.remove();
-    }, 1500);
+        // Append to body
+        particlesContainer.appendChild(particle);
+
+        // Animate particle
+        setTimeout(() => {
+            particle.style.opacity = 1;
+            particle.style.transition = 'opacity 1s ease-out';
+            particle.style.animation = 'fade-out 2s forwards';
+            particle.style.top = `${Math.random() * window.innerHeight}px`;
+            particle.style.left = `${Math.random() * window.innerWidth}px`;
+        }, Math.random() * 1000); // Delay for random effect
+
+        // Remove particle after animation
+        particle.addEventListener('animationend', () => {
+            particlesContainer.removeChild(particle);
+        });
+    }
 }
 
-// Throttle function to limit the rate of event execution
-function throttle(callback, limit) {
-    let lastCall = 0;
-    return function (...args) {
-        const now = new Date().getTime();
-        if (now - lastCall >= limit) {
-            lastCall = now;
-            callback(...args);
-        }
-    };
-}
+// Create new particles every second
+setInterval(() => {
+    createParticles(5); // Number of particles to create
+}, 1000);
 
-// Flipping skill cards functionality
-const skillCards = document.querySelectorAll('.skill-card');
-skillCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.classList.add('hover');
-    });
-    card.addEventListener('mouseleave', () => {
-        card.classList.remove('hover');
-    });
+// Theme toggle functionality
+const themeToggleBtn = document.getElementById('theme-toggle');
+themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    if (document.body.classList.contains('light-mode')) {
+        themeToggleBtn.textContent = 'Switch to Dark Mode';
+    } else {
+        themeToggleBtn.textContent = 'Switch to Light Mode';
+    }
 });
