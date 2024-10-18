@@ -53,20 +53,22 @@ nav ul li a:hover {
 
 /* Particle styles */
 .particle {
-    position: absolute;
+    position: fixed; /* Fixed position to follow the cursor even when scrolling */
     border-radius: 50%;
     background: rgba(0, 255, 255, 0.7);
     pointer-events: none;
-    opacity: 0;
-    animation: fade-out 1.5s forwards;
+    animation: fade-out 1s ease-out forwards, move 0.6s ease-out forwards; /* Adds movement and fade effect */
+    z-index: 1000; /* Ensure particles are always on top */
 }
 
 @keyframes fade-out {
     from {
         opacity: 1;
+        transform: scale(1); /* Starts at normal size */
     }
     to {
         opacity: 0;
+        transform: scale(0.5); /* Shrinks as it fades */
     }
 }
 

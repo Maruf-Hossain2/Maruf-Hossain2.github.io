@@ -7,22 +7,30 @@ themeToggleButton.addEventListener('click', () => {
     themeToggleButton.textContent = body.classList.contains('light-mode') ? 'Switch to Dark Mode' : 'Switch to Light Mode';
 });
 
-// Particle effect on mouse movement
+// Particle effect on mouse movement with trail
 document.addEventListener('mousemove', (e) => {
-    createParticle(e);
+    createParticle(e.pageX, e.pageY);
 });
 
-function createParticle(e) {
+// Handles scrolling as well as mouse movement
+document.addEventListener('scroll', (e) => {
+    createParticle(event.clientX, event.clientY);
+});
+
+function createParticle(x, y) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
+
     const size = Math.random() * 10 + 5; // Random size between 5 and 15
-    particle.style.width = ${size}px;
-    particle.style.height = ${size}px;
-    particle.style.left = ${e.pageX}px;
-    particle.style.top = ${e.pageY}px;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    particle.style.left = `${x}px`; // Corrected particle positioning
+    particle.style.top = `${y}px`; 
+
     document.body.appendChild(particle);
-    
-    // Remove particle after animation ends
+
+    // Fade out and remove particle after animation
     particle.addEventListener('animationend', () => {
         particle.remove();
     });
