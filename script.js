@@ -1,47 +1,57 @@
-// Script for mouse-following particles
-document.addEventListener('mousemove', (e) => {
-    const particle = createParticle(e.clientX, e.clientY);
-    document.body.appendChild(particle);
-});
+// Particle effect on mouse move
+document.addEventListener('mousemove', createParticle);
 
-// Particle creation function
-function createParticle(x, y) {
+function createParticle(e) {
     const particle = document.createElement('div');
-    particle.className = 'particle';
-    const size = Math.random() * 10 + 5; // Random size between 5 and 15px
+    particle.classList.add('particle');
+    document.body.appendChild(particle);
+
+    const size = Math.random() * 20 + 10;
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
-    
-    // Random color
-    const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    particle.style.backgroundColor = color;
 
-    // Set particle position and opacity
+    const x = e.clientX - size / 2;
+    const y = e.clientY - size / 2;
     particle.style.left = `${x}px`;
     particle.style.top = `${y}px`;
-    particle.style.opacity = 1;
 
-    // Animate particle fade out
+    // Particle animation and removal
     setTimeout(() => {
-        particle.style.opacity = 0;
-        particle.style.transition = 'opacity 0.5s ease-out';
-    }, 50); // Slight delay to ensure the particle is visible before fading out
-
-    // Remove particle after animation
-    particle.addEventListener('transitionend', () => {
-        document.body.removeChild(particle);
-    });
-
-    return particle;
+        particle.remove();
+    }, 1500); // Remove particle after 1.5 seconds
 }
 
-// Theme toggle functionality
-const themeToggleBtn = document.getElementById('theme-toggle');
-themeToggleBtn.addEventListener('click', () => {
+// Theme toggle: Light/Dark mode
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
+
+    // Update button text based on the current theme
     if (document.body.classList.contains('light-mode')) {
-        themeToggleBtn.textContent = 'Switch to Dark Mode';
+        themeToggle.textContent = 'Switch to Dark Mode';
     } else {
-        themeToggleBtn.textContent = 'Switch to Light Mode';
+        themeToggle.textContent = 'Switch to Light Mode';
+    }
+});
+
+// Form submission (basic client-side validation and console log)
+document.getElementById('contact-form').addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const message = event.target.message.value;
+
+    if (name && email && message) {
+        console.log(`Name: ${name}`);
+        console.log(`Email: ${email}`);
+        console.log(`Message: ${message}`);
+
+        // You can add an AJAX request or API call here to submit the data to the server
+        alert('Message sent successfully!');
+        event.target.reset(); // Clear the form after submission
+    } else {
+        alert('Please fill in all fields before submitting.');
     }
 });
