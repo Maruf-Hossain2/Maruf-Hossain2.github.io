@@ -92,6 +92,7 @@ section {
     width: 100%; /* Responsive width */
     max-width: 200px; /* Max width for each card */
     position: relative;
+    height: 150px; /* Fixed height to prevent overlap */
     display: flex;
     justify-content: center;
     align-items: center;
