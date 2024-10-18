@@ -1,50 +1,39 @@
 // Script for mouse-following particles
 document.addEventListener('mousemove', (e) => {
-    const particles = document.querySelectorAll('.particle');
-    particles.forEach((particle) => {
-        particle.style.left = `${e.clientX}px`;
-        particle.style.top = `${e.clientY}px`;
-    });
+    const particle = createParticle(e.clientX, e.clientY);
+    document.body.appendChild(particle);
 });
 
 // Particle creation function
-function createParticles(num) {
-    const particlesContainer = document.body;
+function createParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    const size = Math.random() * 10 + 5; // Random size between 5 and 15px
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    
+    // Random color
+    const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    particle.style.backgroundColor = color;
 
-    for (let i = 0; i < num; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        const size = Math.random() * 10 + 5; // Random size between 5 and 15px
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
+    // Set particle position and opacity
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+    particle.style.opacity = 1;
 
-        // Random color
-        const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        particle.style.backgroundColor = color;
+    // Animate particle fade out
+    setTimeout(() => {
+        particle.style.opacity = 0;
+        particle.style.transition = 'opacity 0.5s ease-out';
+    }, 50); // Slight delay to ensure the particle is visible before fading out
 
-        // Append to body
-        particlesContainer.appendChild(particle);
+    // Remove particle after animation
+    particle.addEventListener('transitionend', () => {
+        document.body.removeChild(particle);
+    });
 
-        // Animate particle
-        setTimeout(() => {
-            particle.style.opacity = 1;
-            particle.style.transition = 'opacity 1s ease-out';
-            particle.style.animation = 'fade-out 2s forwards';
-            particle.style.top = `${Math.random() * window.innerHeight}px`;
-            particle.style.left = `${Math.random() * window.innerWidth}px`;
-        }, Math.random() * 1000); // Delay for random effect
-
-        // Remove particle after animation
-        particle.addEventListener('animationend', () => {
-            particlesContainer.removeChild(particle);
-        });
-    }
+    return particle;
 }
-
-// Create new particles every second
-setInterval(() => {
-    createParticles(5); // Number of particles to create
-}, 1000);
 
 // Theme toggle functionality
 const themeToggleBtn = document.getElementById('theme-toggle');
