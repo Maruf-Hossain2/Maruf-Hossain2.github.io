@@ -15,10 +15,11 @@ themeToggle.addEventListener('click', () => {
     isLightMode = !isLightMode;
 });
 
-// Particle effect
-document.addEventListener('mousemove', throttle((e) => {
-    createParticle(e.clientX, e.clientY);
-}, 100));
+// Particle effect on mouse movement
+document.addEventListener('mousemove', (e) => {
+    const scrollY = window.scrollY; // Get the current vertical scroll position
+    createParticle(e.pageX, e.pageY + scrollY); // Adjust the Y position based on scroll
+});
 
 function createParticle(x, y) {
     const particle = document.createElement('div');
@@ -45,7 +46,6 @@ function createParticle(x, y) {
         particle.remove();
     }, 1500);
 }
-
 
 // Throttle function to limit the rate of event execution
 function throttle(callback, limit) {
