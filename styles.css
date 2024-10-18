@@ -49,7 +49,6 @@ nav ul li a:hover {
     background-color: rgba(0, 255, 255, 0.7);
     border: none;
     border-radius: 5px;
-    color: black;
 }
 
 /* Particle styles */
@@ -83,20 +82,22 @@ section {
 .skills-container {
     display: grid; /* Use CSS Grid for layout */
     grid-template-columns: repeat(4, 1fr); /* Four equal columns */
-    gap: 2rem; /* Space between cards */
+    gap: 20px; /* Space between cards */
     margin: 0 auto; /* Center the grid */
     padding: 20px; /* Additional padding */
 }
 
 .skill-card {
     perspective: 1000px;
-    width: 200px; /* Set a fixed width */
+    width: 100%; /* Responsive width */
+    max-width: 200px; /* Max width for each card */
+    position: relative; /* Position relative for the child elements */
 }
 
 .card-front, .card-back {
     position: absolute;
     width: 100%; /* Make it responsive */
-    height: 150px;
+    height: 150px; /* Fixed height */
     backface-visibility: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
