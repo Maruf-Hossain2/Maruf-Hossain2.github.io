@@ -1,42 +1,58 @@
-// Light/Dark mode toggle
-const themeToggleButton = document.getElementById('theme-toggle');
-const body = document.body;
+// Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+let isLightMode = false;
 
-themeToggleButton.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    themeToggleButton.textContent = body.classList.contains('light-mode') ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+themeToggle.addEventListener('click', () => {
+    if (isLightMode) {
+        document.body.style.background = 'black';
+        document.body.style.color = '#ffffff';
+        themeToggle.innerText = 'Switch to Light Mode';
+    } else {
+        document.body.style.background = '#ffffff';
+        document.body.style.color = 'black';
+        themeToggle.innerText = 'Switch to Dark Mode';
+    }
+    isLightMode = !isLightMode;
 });
 
-// Particle effect on mouse movement
-document.addEventListener('mousemove', (e) => {
-    createParticle(e);
-});
+// Particle effect
+document.addEventListener('mousemove', throttle((e) => {
+    createParticle(e.clientX, e.clientY);
+}, 100));
 
-function createParticle(e) {
+function createParticle(x, y) {
     const particle = document.createElement('div');
-    particle.classList.add('particle');
-    const size = Math.random() * 10 + 5; // Random size between 5 and 15
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    particle.style.left = `${e.pageX}px`;
-    particle.style.top = `${e.pageY}px`;
+    particle.className = 'particle';
+    particle.style.width = `${Math.random() * 10 + 5}px`;
+    particle.style.height = particle.style.width;
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
     document.body.appendChild(particle);
-    
-    // Remove particle after animation ends
-    particle.addEventListener('animationend', () => {
+
+    setTimeout(() => {
         particle.remove();
-    });
+    }, 1500);
 }
 
-// Implementing the card flip animation on hover
-const skillCards = document.querySelectorAll('.skill-card');
+// Throttle function to limit the rate of event execution
+function throttle(callback, limit) {
+    let lastCall = 0;
+    return function (...args) {
+        const now = new Date().getTime();
+        if (now - lastCall >= limit) {
+            lastCall = now;
+            callback(...args);
+        }
+    };
+}
 
+// Flipping skill cards functionality
+const skillCards = document.querySelectorAll('.skill-card');
 skillCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
-        card.classList.add('flipped');
+        card.classList.add('hover');
     });
-    
     card.addEventListener('mouseleave', () => {
-        card.classList.remove('flipped');
+        card.classList.remove('hover');
     });
 });
