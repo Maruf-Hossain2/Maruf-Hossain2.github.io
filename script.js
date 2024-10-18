@@ -34,6 +34,21 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
+// Show skill details on hover
+const skillCards = document.querySelectorAll('.skill-card');
+const skillDetails = document.getElementById('skill-details');
+
+skillCards.forEach(card => {
+    card.addEventListener('mouseover', (e) => {
+        const skillDescription = card.getAttribute('data-skill');
+        skillDetails.innerHTML = `<p>${skillDescription}</p>`;
+    });
+
+    card.addEventListener('mouseout', () => {
+        skillDetails.innerHTML = '<p>Hover over a skill to see details here!</p>';
+    });
+});
+
 // Form submission with client-side validation
 document.getElementById('contact-form').addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent page refresh
