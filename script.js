@@ -15,13 +15,12 @@ function createParticle(e) {
     particle.style.left = `${x}px`;
     particle.style.top = `${y}px`;
 
-    // Particle animation and removal
     setTimeout(() => {
         particle.remove();
-    }, 1500); // Remove particle after 1.5 seconds
+    }, 1500); // Particle disappears after 1.5s
 }
 
-// Theme toggle: Light/Dark mode
+// Theme toggle: Dark/Light mode
 const themeToggle = document.getElementById('theme-toggle');
 
 themeToggle.addEventListener('click', () => {
@@ -35,9 +34,9 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// Form submission (basic client-side validation and console log)
+// Form submission with client-side validation
 document.getElementById('contact-form').addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent the form from refreshing the page
+    event.preventDefault(); // Prevent page refresh
 
     const name = event.target.name.value;
     const email = event.target.email.value;
@@ -47,8 +46,6 @@ document.getElementById('contact-form').addEventListener('submit', (event) => {
         console.log(`Name: ${name}`);
         console.log(`Email: ${email}`);
         console.log(`Message: ${message}`);
-
-        // You can add an AJAX request or API call here to submit the data to the server
         alert('Message sent successfully!');
         event.target.reset(); // Clear the form after submission
     } else {

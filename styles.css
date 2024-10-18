@@ -1,3 +1,4 @@
+/* Original styles preserved */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -6,47 +7,18 @@ body {
     background: black;
     color: #ffffff;
     overflow: auto;
-    position: relative;
-}
-
-nav {
-    background: rgba(0, 0, 0, 0.5);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #0ff;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-nav ul li button {
-    background: #0ff;
-    color: #000;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
+    position: relative; /* To allow absolute positioning of particles */
 }
 
 header {
+    background: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 2rem 0;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+h1, h2, h3 {
+    margin: 0;
 }
 
 section {
@@ -60,8 +32,14 @@ section {
     padding: 2rem;
 }
 
+.about-text {
+    flex: 1;
+    margin-right: 1rem;
+}
+
 .profile-container {
-    width: 200px;
+    position: relative;
+    width: 200px; /* Adjust the size as needed */
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -72,9 +50,15 @@ section {
     box-shadow: 0 4px 20px rgba(0, 255, 255, 0.5);
 }
 
-.project a:hover {
-    color: #0ff;
-    transform: scale(1.05);
+.project {
+    margin-bottom: 1rem;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
 }
 
 #skills {
@@ -98,6 +82,8 @@ section {
     padding: 1.5rem;
     width: 200px;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-card:hover {
@@ -105,49 +91,85 @@ section {
     box-shadow: 0 8px 40px rgba(0, 255, 255, 0.5);
 }
 
-footer {
-    background: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding: 1rem 0;
+.skill-card::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 110%; /* Place above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 255, 255, 0.8);
+    color: #000;
+    padding: 0.75rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    font-size: 1.1rem;
 }
 
+.skill-card:hover::after {
+    opacity: 1;
+}
+
+/* Particle effect - Lightning sparks */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(0, 255, 255, 0.7);
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 255, 255, 0) 80%);
+    animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+#theme-toggle {
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 255, 255, 0.7);
+    border: none;
+    border-radius: 5px;
+    color: black;
+}
+
+.light-mode {
+    background: white;
+    color: black;
+}
+
+/* Form styling */
 form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-input, textarea {
-    padding: 1rem;
-    border: none;
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
     border-radius: 5px;
-}
-
-button {
-    padding: 1rem;
-    background-color: #0ff;
     border: none;
-    color: #000;
-    border-radius: 5px;
+    width: 100%;
 }
 
-body.light-mode {
-    background-color: #f0f0f0;
-    color: #000;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .about-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .skills-container {
-        flex-direction: column;
-    }
-
-    .profile-photo {
-        width: 150px;
-    }
+form button {
+    background-color: rgba(0, 255, 255, 0.7);
+    cursor: pointer;
 }
