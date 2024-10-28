@@ -5,150 +5,286 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Maruf Hossain</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <h1>Maruf Hossain</h1>
-        <p>Welcome to my portfolio website</p>
-        <button id="theme-toggle">Switch to Light Mode</button>
-    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle light and dark theme">
+            <i class="fas fa-lightbulb"></i>
+        </button>
+    </nav>
     
+    <h1>Maruf Hossain</h1>
+    <p>Welcome to my portfolio website</p>
+    
+    <!-- About Me Section -->
     <section id="about" class="about-section">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>A short description about who you are, your background, and what you do.</p>
-        </div>
-        <div class="profile-container">
-            <img src="your-photo.jpg" alt="Maruf Hossain" class="profile-photo">
+        <h1 class="heading">About Me</h1>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="img/my-photo.jpg" alt="Photo of Maruf Hossain" class="profile-img">
+            </div>
+            <div class="about-content">
+                <h2>Hi, I'm Maruf!</h2>
+                <p>
+                    I am a passionate web developer with a strong foundation in HTML, CSS, and JavaScript. 
+                    I enjoy creating interactive and user-friendly web applications that provide a seamless user experience.
+                </p>
+                <p>
+                    With a keen interest in front-end development, I strive to stay updated with the latest technologies 
+                    and trends. When I'm not coding, I enjoy [hobbies/interests], which keep me inspired and motivated.
+                </p>
+                <p>
+                    Feel free to connect with me on 
+                    <a href="https://github.com/Maruf-Hossain2" target="_blank">GitHub</a> or 
+                    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>. 
+                    I'm always open to networking and collaboration!
+                </p>
+            </div>
         </div>
     </section>
     
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Brief description of your project and a link to view it.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Brief description of your second project and a link to view it.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h1 class="heading">Projects</h1>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="img/project1.jpg" alt="Screenshot of Project 1">
+                </div>
+                <h2 class="project-title">Project Title 1</h2>
+                <p class="project-description">
+                    Brief description of the project goes here. Highlight key features and technologies used.
+                </p>
+                <a href="https://github.com/your-repo-link" target="_blank" class="project-link">View Project</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="img/project2.jpg" alt="Screenshot of Project 2">
+                </div>
+                <h2 class="project-title">Project Title 2</h2>
+                <p class="project-description">
+                    Brief description of the project goes here. Highlight key features and technologies used.
+                </p>
+                <a href="https://github.com/your-repo-link" target="_blank" class="project-link">View Project</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="img/project3.jpg" alt="Screenshot of Project 3">
+                </div>
+                <h2 class="project-title">Project Title 3</h2>
+                <p class="project-description">
+                    Brief description of the project goes here. Highlight key features and technologies used.
+                </p>
+                <a href="https://github.com/your-repo-link" target="_blank" class="project-link">View Project</a>
+            </div>
         </div>
     </section>
     
-    <section id="skills">
-        <h2>My Skills</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="skill-section">
+        <h1 class="heading">Skills</h1>
         <div class="skills-container">
+            <!-- HTML Skill Card -->
             <div class="skill-card">
-                <div class="card-front">
-                    <h3>HTML</h3>
-                </div>
-                <div class="card-back">
-                    <p>Proficient in structuring web pages using HTML5.</p>
+                <div class="skill-inner">
+                    <div class="card-front">
+                        <img src="img/html.png" class="skill-img" alt="HTML logo">
+                        <h1 class="skill-name">HTML</h1>
+                        <div class="skill-percentage" data-percentage="98%">
+                            <div class="pie-chart" style="--percentage: 98%;"></div>
+                            <span class="percentage-text">98%</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p class="skill-info">Proficient in HTML5 with 98% proficiency.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- CSS Skill Card -->
             <div class="skill-card">
-                <div class="card-front">
-                    <h3>CSS</h3>
-                </div>
-                <div class="card-back">
-                    <p>Experienced in styling and layout with CSS3.</p>
+                <div class="skill-inner">
+                    <div class="card-front">
+                        <img src="img/css.png" class="skill-img" alt="CSS logo">
+                        <h1 class="skill-name">CSS</h1>
+                        <div class="skill-percentage" data-percentage="38%">
+                            <div class="pie-chart" style="--percentage: 38%;"></div>
+                            <span class="percentage-text">38%</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p class="skill-info">Proficient in CSS with 38% proficiency.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- JS Skill Card -->
             <div class="skill-card">
-                <div class="card-front">
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="card-back">
-                    <p>Skilled in adding interactivity with JavaScript and ES6.</p>
+                <div class="skill-inner">
+                    <div class="card-front">
+                        <img src="img/js.png" class="skill-img" alt="JavaScript logo">
+                        <h1 class="skill-name">JavaScript</h1>
+                        <div class="skill-percentage" data-percentage="85%">
+                            <div class="pie-chart" style="--percentage: 85%;"></div>
+                            <span class="percentage-text">85%</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p class="skill-info">Proficient in JavaScript with 85% proficiency.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Node.js Skill Card -->
             <div class="skill-card">
-                <div class="card-front">
-                    <h3>React</h3>
-                </div>
-                <div class="card-back">
-                    <p>Proficient in building user interfaces with React.</p>
+                <div class="skill-inner">
+                    <div class="card-front">
+                        <img src="img/nodejs.png" class="skill-img" alt="Node.js logo">
+                        <h1 class="skill-name">Node.js</h1>
+                        <div class="skill-percentage" data-percentage="78%">
+                            <div class="pie-chart" style="--percentage: 78%;"></div>
+                            <span class="percentage-text">78%</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p class="skill-info">Proficient in Node.js with 78% proficiency.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- React.js Skill Card -->
             <div class="skill-card">
-                <div class="card-front">
-                    <h3>Node.js</h3>
-                </div>
-                <div class="card-back">
-                    <p>Experienced in server-side development using Node.js.</p>
+                <div class="skill-inner">
+                    <div class="card-front">
+                        <img src="img/reactjs.png" class="skill-img" alt="React.js logo">
+                        <h1 class="skill-name">React.js</h1>
+                        <div class="skill-percentage" data-percentage="58%">
+                            <div class="pie-chart" style="--percentage: 58%;"></div>
+                            <span class="percentage-text">58%</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p class="skill-info">Proficient in React.js with 58% proficiency.</p>
+                    </div>
                 </div>
             </div>
-            <div class="skill-card">
-                <div class="card-front">
-                    <h3>Python</h3>
-                </div>
-                <div class="card-back">
-                    <p>Skilled in writing scripts and automation with Python.</p>
-                </div>
-            </div>
-            <!-- Add more skill cards as needed -->
         </div>
     </section>
-    
-    <section id="hobbies">
-        <h2>Hobbies</h2>
-        <p>List your hobbies and interests here.</p>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies-section">
+        <h1 class="heading">Hobbies</h1>
+        <div class="hobbies-container">
+            <!-- Hobby 1 -->
+            <div class="hobby-card">
+                <img src="img/hobby1.png" alt="Hobby 1 icon" class="hobby-icon">
+                <h2 class="hobby-title">Hobby Title 1</h2>
+                <p class="hobby-description">
+                    Brief description of the hobby goes here. Explain why you enjoy it.
+                </p>
+            </div>
+
+            <!-- Hobby 2 -->
+            <div class="hobby-card">
+                <img src="img/hobby2.png" alt="Hobby 2 icon" class="hobby-icon">
+                <h2 class="hobby-title">Hobby Title 2</h2>
+                <p class="hobby-description">
+                    Brief description of the hobby goes here. Explain why you enjoy it.
+                </p>
+            </div>
+        </div>
     </section>
-    
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <p>List your certifications here.</p>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <h1 class="heading">Certifications</h1>
+        <div class="certifications-container">
+            <!-- Certification 1 -->
+            <div class="certification-card">
+                <h2 class="certification-title">Certification Title 1</h2>
+                <p class="certification-description">
+                    Brief description of the certification goes here. Include the certification body and date of completion.
+                </p>
+            </div>
+
+            <!-- Certification 2 -->
+            <div class="certification-card">
+                <h2 class="certification-title">Certification Title 2</h2>
+                <p class="certification-description">
+                    Brief description of the certification goes here. Include the certification body and date of completion.
+                </p>
+            </div>
+        </div>
     </section>
-    
-    <section id="awards">
-        <h2>Awards</h2>
-        <p>List your awards here.</p>
+
+    <!-- Awards Section -->
+    <section id="awards" class="awards-section">
+        <h1 class="heading">Awards</h1>
+        <div class="awards-container">
+            <!-- Award 1 -->
+            <div class="award-card">
+                <h2 class="award-title">Award Title 1</h2>
+                <p class="award-description">
+                    Brief description of the award goes here. Include the awarding body and date of recognition.
+                </p>
+            </div>
+
+            <!-- Award 2 -->
+            <div class="award-card">
+                <h2 class="award-title">Award Title 2</h2>
+                <p class="award-description">
+                    Brief description of the award goes here. Include the awarding body and date of recognition.
+                </p>
+            </div>
+        </div>
     </section>
-    
-    <section id="resume">
-        <h2>Downloadable Resume</h2>
-        <a href="your-resume.pdf" class="resume-link" download>Download my Resume</a>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <h1 class="heading">Resume</h1>
+        <div class="resume-container">
+            <a href="files/maruf_resume.pdf" target="_blank" class="resume-download">Download My Resume</a>
+        </div>
     </section>
-    
-    <section id="contact">
+
+    <!-- Contact Section -->
+    <section class="contact">
         <h2>Contact Me</h2>
-        <div class="contact-container">
-            <form id="contact-form">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+        <form action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+    
+            <input type="submit" value="Send">
+        </form>
     </section>    
-    
+
+    <!-- Footer -->
     <footer>
-        <p>Contact: your-email@example.com</p>
-        <p>Follow me on:
-            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>,
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>,
-            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-        </p>
+        <p>&copy; 2024 Maruf Hossain | All Rights Reserved.</p>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
