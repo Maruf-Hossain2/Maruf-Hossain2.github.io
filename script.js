@@ -1,10 +1,19 @@
 // Light/Dark mode toggle
-const themeToggleButton = document.getElementById('theme-toggle');
+const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 
-themeToggleButton.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    themeToggleButton.textContent = body.classList.contains('light-mode') ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+themeToggle.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+
+    // Toggle the light bulb icon color
+    themeToggle.classList.toggle("light-mode");
+
+    // Toggle button text or state
+    if (body.classList.contains("light-mode")) {
+        themeToggle.title = "Switch to Dark Mode";
+    } else {
+        themeToggle.title = "Switch to Light Mode";
+    }
 });
 
 // Particle effect on mouse movement with trail
