@@ -2,12 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio - Maruf Hossain</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Neon Cursor */
+        .neon-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0, 255, 255, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+            transition: transform 0.2s ease-out;
+        }
+
+        /* Smooth cursor transition */
+        .neon-cursor.smooth {
+            transition: transform 0.1s ease-out;
+        }
+    </style>
 </head>
 <body>
+    <canvas id="canvas"></canvas>
+    <!-- Neon Cursor -->
+    <div class="neon-cursor" id="neonCursor"></div>
+    
     <nav class="navbar">
         <ul>
             <li><a href="#about">About</a></li>
@@ -286,5 +311,6 @@
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
