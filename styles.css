@@ -12,6 +12,47 @@ body {
     align-items: center; /* Center content horizontally */
 }
 
+/* Neon cursor styles */
+.cursor {
+    position: fixed;
+    width: 20px; /* Size of the cursor */
+    height: 20px; /* Size of the cursor */
+    border-radius: 50%; /* Make it circular */
+    background: rgba(0, 255, 255, 0.7); /* Neon color */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    transition: transform 0.1s ease-in-out; /* Smooth movement */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Neon glow */
+}
+
+/* Update cursor position */
+document.addEventListener('mousemove', (e) => {
+    const cursor = document.querySelector('.cursor');
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+});
+
+/* Style for particles */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.8); /* Neon color */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.5);
+    animation: fadeOut 0.8s forwards; /* Animation to fade out */
+    transition: transform 0.2s ease; /* Smooth transition for particles */
+}
+
+/* Animation to fade out particles */
+@keyframes fadeOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
 header {
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
