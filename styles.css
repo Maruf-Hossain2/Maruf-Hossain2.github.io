@@ -638,27 +638,64 @@ header {
 }
 
 /* Resume Section Styling */
+/* Resume Section Styling */
 .resume-description {
-    font-size: 18px; /* Description size */
-    color: #fff; /* Text color */
-    margin-bottom: 20px; /* Spacing below description */
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
+/* Futuristic Resume Download Button */
 .resume-download-button {
-    display: inline-block; /* Block display for padding */
-    padding: 15px 30px; /* Button padding */
-    font-size: 20px; /* Button text size */
-    color: #fff; /* Button text color */
-    background-color: #00ffff; /* Button background color */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3); /* Button glow */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #fff;
+    background: linear-gradient(135deg, #00ffff, #008b8b);
+    border-radius: 8px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.2);
+    transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a glowing effect to the border */
+.resume-download-button::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00ffff, #008b8b);
+    filter: blur(10px);
+    opacity: 0.7;
+    transition: opacity 0.4s;
+    z-index: -1;
 }
 
 .resume-download-button:hover {
-    background-color: #008b8b; /* Darker background on hover */
-    transform: translateY(-5px); /* Lift effect on hover */
+    background: linear-gradient(135deg, #008b8b, #00ffff);
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.3);
+}
+
+/* Subtle border pulsing effect */
+.resume-download-button::before {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 /* Contact Section */
@@ -815,4 +852,14 @@ footer a:hover {
 footer p:first-child {
     margin-bottom: 15px;
     font-size: 18px;
+}
+
+#spider-web {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind other elements */
+    pointer-events: none; /* Prevent interactions */
 }
