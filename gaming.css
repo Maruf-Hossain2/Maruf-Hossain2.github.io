@@ -200,7 +200,6 @@
     gap: 10px; /* Reduced gap */
 }
 
-
 .navbar-link {
     text-decoration: none;
     color: #fff;
@@ -218,7 +217,6 @@
     color: rgba(0, 255, 127, 0.8);
     transform: scale(1.05);
 }
-
 
 /* Responsive adjustments (remove or adjust as needed) */
 @media (max-width: 768px) {
