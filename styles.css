@@ -30,7 +30,6 @@
     --shadow-color: rgba(0, 0, 0, 0.7); /* Dark shadow */
     --about-bg-light: linear-gradient(135deg, #f0f0f0, var(--bg-color-light));
     --about-bg-dark: linear-gradient(135deg, var(--bg-color-dark), #333333);
-
 }
 
 body {
@@ -373,12 +372,17 @@ li {
     padding: 40px;
 }
 
-
 /* ============================================================
    About Me Section
 ============================================================ */
 
-.about-container {
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -392,45 +396,45 @@ li {
     position: relative;
     overflow: hidden;
     gap: 100px;
-}
-
-.about-content {
+  }
+  
+  .about-content {
     flex: 2;
     z-index: 1;
     color: var(--text-color-dark);
     transition: color 0.3s ease-in-out;
-}
-
-.about-content h2 {
+  }
+  
+  .about-content h2 {
     font-size: 48px;
     color: var(--heading-color);
     margin-bottom: 30px;
-}
-
-.about-content p {
+  }
+  
+  .about-content p {
     font-size: 24px;
     line-height: 1.5;
     margin-bottom: 20px;
     color: var(--text-color-dark);
     transition: color 0.3s ease-in-out;
-}
-
-[data-theme="light"] .about-content p {
+  }
+  
+  .about-content p[data-theme="light"] {
     color: var(--text-color-light);
-}
-
-.about-content a {
+  }
+  
+  .about-content a {
     color: var(--link-color);
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
-}
-
-.about-content a:hover {
+  }
+  
+  .about-content a:hover {
     text-decoration: underline;
-}
-
-.about-image {
+  }
+  
+  .about-image {
     flex: 1;
     background: url('img/pfp.jpg') no-repeat center center;
     background-size: cover;
@@ -439,30 +443,65 @@ li {
     position: relative;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     box-shadow: 0 0 10px var(--neon-glow);
-}
-
-.about-image:hover {
+  }
+  
+  .about-image:hover {
     transform: scale(1.05);
     opacity: 0.95;
     box-shadow: 0 0 20px var(--neon-glow), 0 0 35px var(--neon-glow);
-}
-
-.about-section .heading {
+  }
+  
+  .about-button {
+    display: inline-block;
+    font-size: 24px;
+    padding: 25px 50px;
+    margin-bottom: 40px;
+    color: var(--submit-text-color);
+    background: linear-gradient(135deg, var(--submit-bg), var(--submit-hover-bg));
+    border-radius: 12px;
     text-decoration: none;
-    color: #00ffff; /* Bright cyan */
-    transition: color 0.3s, text-shadow 0.3s;
-    cursor: pointer;
-}
-
-.about-section .heading:hover {
-    color: #ffffff; /* White text on hover */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 5px rgba(0, 0, 0, 0.5); /* Dark blue glow, more opaque */
-}
-
-@media (min-width: 768px) {
-    .about-container { gap: 80px; }
-    .about-image { min-height: 400px; }
-}
+    border: 2px solid transparent;
+    box-shadow: 8px 8px 15px var(--shadow-color), -8px -8px 15px rgba(255, 255, 255, 0.3);
+    transition: background 0.4s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 2px 2px 4px var(--shadow-color);
+  }
+  
+  .about-button::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--submit-bg), var(--submit-hover-bg));
+    filter: blur(15px);
+    opacity: 0.7;
+    z-index: -1;
+    transition: opacity 0.4s;
+  }
+  
+  .about-button:hover {
+    box-shadow: 12px 12px 25px var(--shadow-color), -12px -12px 25px rgba(255, 255, 255, 0.5);
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, var(--submit-bg), var(--submit-bg));
+  }
+  
+  .about-button:active {
+    transform: translateY(4px);
+    box-shadow: 4px 4px 10px var(--shadow-color), -4px -4px 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  @media (min-width: 768px) {
+    .about-container {
+      gap: 80px;
+    }
+    .about-image {
+      min-height: 400px;
+    }
+  }  
 
 /* ============================================================
    Projects Section
